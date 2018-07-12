@@ -18,7 +18,7 @@
 (add-to-list 'auto-mode-alist '("\\.pyx\\'" . cython-mode))
 (add-to-list 'auto-mode-alist '("\\.pxd\\'" . cython-mode))
 (add-to-list 'auto-mode-alist '("\\.pxi\\'" . cython-mode))
-
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 (global-flycheck-mode 1)
 
 (require 'ido)
@@ -56,7 +56,7 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-9") 'delete-window)
 (global-set-key (kbd "M-i") 'previous-multiframe-window)
 (fset 'settrace
    "import ipdb;ipdb.set_trace()\C-i")
@@ -68,7 +68,7 @@
             (define-key term-raw-map (kbd "M-x") 'nil)
             (define-key term-raw-map (kbd "M-i") 'nil)
             (define-key term-raw-map (kbd "M-o") 'nil)
-            (define-key term-raw-map (kbd "M-0") 'nil)
+            (define-key term-raw-map (kbd "M-9") 'nil)
             (define-key term-raw-map (kbd "C-M-h") 'nil)
             (define-key term-raw-map (kbd "C-y") 'term-paste)
             )

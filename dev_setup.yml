@@ -1,0 +1,27 @@
+- hosts: all
+      tasks:
+        - name: Install libraries with homebrew
+          homebrew: name={{ item }} state=present
+          with_items:
+            - wget
+            - apple-gcc42
+            - vim
+            - ack
+            - git
+            - rbenv
+            - ruby-build
+            - elasticsearch
+            - mysql
+            - tmux
+
+        - name: Start services at login
+          file: src=/usr/local/opt/{{ item }}/homebrew.mxcl.{{ item }}.plist path=~/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist state=link force=yes
+          with_items:
+            - mysql
+            - elasticsearch
+
+        - name: Setup launch agents for services
+          command: launchctl load {{ home }}/Library/LaunchAgents/homebrew.mxcl.{{ item }}.plist
+          with_items:
+            - mysql
+            - elasticsearch
