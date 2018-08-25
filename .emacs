@@ -57,6 +57,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-9") 'delete-window)
+(global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-i") 'previous-multiframe-window)
 (fset 'settrace
    "import ipdb;ipdb.set_trace()\C-i")
