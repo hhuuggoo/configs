@@ -4,6 +4,7 @@
 (global-set-key (kbd "M-?") 'mark-paragraph)
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "M-h") 'backward-kill-word)
+(global-set-key (kbd "\C-[\C-h") 'backward-kill-word)
 
 (require 'package)
 
@@ -95,3 +96,10 @@
      '(term-color-magenta ((t (:background "color-207" :foreground "color-207"))))
      '(term-color-red ((t (:background "color-175" :foreground "OrangeRed1"))))
      '(term-color-yellow ((t (:background "color-227" :foreground "color-227")))))
+
+(fset 'foo
+      "\C-[\C-h")
+(fset 'foo2
+   "\C-p")
+(fset 'foo3
+   "\C-[\C-h")
